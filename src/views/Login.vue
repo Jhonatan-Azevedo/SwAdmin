@@ -1,6 +1,8 @@
 <template>
     <div>
-        Login
+        <h2 class="text-warning">Login</h2>
+        <router-link :to="{ path: '/home' }">Navegar para Login</router-link>
+
     </div>
 </template>
 

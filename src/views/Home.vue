@@ -1,6 +1,7 @@
 <template>
     <div>
-        Home
+        <h2 class="text-danger">Home</h2>
+        <router-link to="/">Sair</router-link>
     </div>
 </template>
 
@@ -9,6 +10,3 @@ export default {
     name: "Home"
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
