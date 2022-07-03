@@ -9,6 +9,7 @@ import Login from "@/views/Login.vue";
 import Sales from "@/components/sales/Sales.vue"
 import Services from "@/components/services/Services.vue"
 import Site from "@/views/Site.vue";
+import StandartSales from "@/components/sales/StandartSales.vue"
 
 const routes = [
   {
@@ -23,7 +24,8 @@ const routes = [
         children: [
           {
             path: "leads",
-            component: Leads
+            component: Leads,
+            name: "leads-sales"
           },
           {
             path: "leads/:id",
@@ -31,12 +33,17 @@ const routes = [
           },
           {
             path: "contratos",
-            component: Contract
+            component: Contract,
+            name: "contract-sales"
+          },
+          {
+            path: "",
+            component: StandartSales
           },
 
         ]
       },
-      { path: "servicos", component: Services },
+      { path: "servicos", component: Services, name: "services" },
       { path: "dashboard", component: Dashboard },
     ]
   },

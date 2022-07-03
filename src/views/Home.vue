@@ -31,19 +31,19 @@
         </router-link>
         <router-link
           class="list-group-item list-group-item-action"
-          to="/home/vendas/leads"
+          :to="{ name: 'leads-sales' }"
           exact-active-class="active-link"
           ><i class="bi bi-caret-right"></i> Leads
         </router-link>
         <router-link
           class="list-group-item list-group-item-action"
-          to="/home/vendas/contratos"
+          :to="{ name: 'contract-sales' }"
           exact-active-class="active-link"
           ><i class="bi bi-caret-right"></i> Contratos
         </router-link>
         <router-link
           class="list-group-item list-group-item-action"
-          to="/home/servicos"
+          :to="{ name: 'services' }"
           exact-active-class="active-link"
           ><i class="bi bi-card-checklist"></i> Serviços
         </router-link>
