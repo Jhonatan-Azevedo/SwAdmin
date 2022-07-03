@@ -4,6 +4,7 @@ import Contract from "@/components/sales/Contract.vue"
 import Dashboard from "@/components/dashboard/Dashboard.vue"
 import Home from "@/views/Home.vue";
 import Leads from "@/components/sales/Leads.vue"
+import Lead from "@/components/sales/Lead.vue"
 import Login from "@/views/Login.vue";
 import Sales from "@/components/sales/Sales.vue"
 import Services from "@/components/services/Services.vue"
@@ -23,6 +24,10 @@ const routes = [
           {
             path: "leads",
             component: Leads
+          },
+          {
+            path: "leads/:id",
+            component: Lead
           },
           {
             path: "contratos",

@@ -24,7 +24,7 @@
             <div class="mb-3">
               <input type="password" class="form-control" placeholder="Senha" />
             </div>
-            <button class="btn btn-primary" @click="login()">Login</button>
+            <button class="btn btn-orange" @click="login()">Login</button>
           </div>
         </div>
       </div>

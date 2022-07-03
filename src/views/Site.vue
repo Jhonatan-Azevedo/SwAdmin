@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col">
           <div class="destaque">
-            <h4 class="text-primary text-center">
+            <h4 class="text-orange text-center">
               Descubra as vantagens em utilizar a SwAdmin para gerenciar seus
               negócios!
             </h4>
@@ -33,7 +33,7 @@
               <div class="mb-3">
                 <input type="email" class="form-control" placeholder="E-mail" />
               </div>
-              <button class="btn btn-primary">Me inscrever</button>
+              <button class="btn btn-orange">Me inscrever</button>
             </div>
           </div>
         </div>

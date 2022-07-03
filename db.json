@@ -1,8 +1,8 @@
 {
     "leads": [
-        {"id": 1, "name": "Bruce Wayne", "PhoneNumber": "11988887777"},
-        {"id": 2, "name": "Tony Stark", "PhoneNumber": "41986761256"},
-        {"id": 3, "name": "Irmão do Jorel", "PhoneNumber": "41999778866"},
-        {"id": 4, "name": "Pinguim Oswaldo", "PhoneNumber": "41984887522"}
+        {"id": 1, "name": "Bruce Wayne", "phoneNumber": "11988887777"},
+        {"id": 2, "name": "Tony Stark", "phoneNumber": "41986761256"},
+        {"id": 3, "name": "Irmão do Jorel", "phoneNumber": "41999778866"},
+        {"id": 4, "name": "Pinguim Oswaldo", "phoneNumber": "41984887522"}
     ]
 }
