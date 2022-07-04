@@ -29,7 +29,8 @@ const routes = [
           },
           {
             path: "leads/:id",
-            component: Lead
+            component: Lead,
+            name: "lead-sales"
           },
           {
             path: "contratos",

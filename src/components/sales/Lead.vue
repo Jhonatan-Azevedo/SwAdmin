@@ -24,15 +24,16 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-6">
-        <button type="button" class="btn btn-orange">Atualizar</button>
-      </div>
-      <div class="col-6 text-end">
-        <button class="btn btn-secondary" @click="voltar()">
-          <i class="bi bi-arrow-left"></i> Voltar
-        </button>
-      </div>
+    <div class="col-auto d-flex justify-content-between">
+      <button type="button" class="btn btn-orange">Atualizar</button>
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        @click="$router.push({ name: 'leads-sales' })"
+      >
+        <i class="bi bi-arrow-left"></i> Voltar
+      </button>
     </div>
   </section>
 </template>
@@ -45,12 +46,6 @@ export default {
   mixins: [ApiMixin],
   created() {
     this.getDataApi(`http://localhost:3000/leads/${this.$route.params.id}`);
-  },
-
-  methods: {
-    voltar() {
-      this.$router.back();
-    },
   },
 };
 </script>

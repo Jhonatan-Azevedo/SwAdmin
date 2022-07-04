@@ -17,7 +17,7 @@
           <td>{{ dataItem.phoneNumber }}</td>
           <td>
             <router-link
-              :to="`leads/${dataItem.id}`"
+              :to="{ name: 'lead-sales', params: { id: dataItem.id } }"
               class="btn btn-sm btn-orange"
             >
               <i class="bi bi-pencil-square" style="cursor: pointer"></i>
