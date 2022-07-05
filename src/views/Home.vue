@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <nav class="navbar navbar-light bg-light menu-superior">
       <div class="container">
         <router-link class="navbar-brand fw-bold" to="/home"
@@ -63,7 +63,12 @@
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="footer text-center">
+      <router-view name="footer"></router-view>
+      <!-- rodapé -->
+    </div>
+  </section>
 </template>
 
 
@@ -92,5 +97,13 @@ export default {
   color: #fff;
   background-image: linear-gradient(to right, orange 60%, #ccc);
   border-color: #ccc;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: orange;
 }
 </style>

@@ -6,8 +6,8 @@
         {"id": 4, "name": "Pinguim Oswaldo", "phoneNumber": "41984887522"}
     ],
     "services": [
-		{ "id": 1, "service": "Seguro de vida", "icon": "seguro_vida.png" },
-		{ "id": 2, "service": "Seguro residencial", "icon": "seguro_residencial.png" },
-		{ "id": 3, "service": "Seguro auto", "icon": "seguro_auto.png" }
+		{ "id": 1, "service": "Seguro de vida", "icon": "seguro_vida.png", "description": "Detalhes do seguro de vida" },
+		{ "id": 2, "service": "Seguro residencial", "icon": "seguro_residencial.png", "description": "Detalhes do seguro residencial" },
+		{ "id": 3, "service": "Seguro auto", "icon": "seguro_auto.png", "description": "Detalhes do seguro auto" }
 	]
 }

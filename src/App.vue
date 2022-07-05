@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style>
+.bg-orange {
+  background-color: orange !important;
+}
+
 .btn-orange {
   background-color: orange !important;
   border-color: orange !important;

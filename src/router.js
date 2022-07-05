@@ -2,11 +2,15 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Contract from "@/components/sales/Contract.vue"
 import Dashboard from "@/components/dashboard/Dashboard.vue"
+import DashboardFooter from "@/components/dashboard/DashboardFooter.vue"
 import Home from "@/views/Home.vue";
+import Indicators from "@/components/services/Indicators.vue";
 import Leads from "@/components/sales/Leads.vue"
 import Lead from "@/components/sales/Lead.vue"
 import Login from "@/views/Login.vue";
+import Options from "@/components/services/Options.vue";
 import Sales from "@/components/sales/Sales.vue"
+import Service from "@/components/services/Service.vue"
 import Services from "@/components/services/Services.vue"
 import Site from "@/views/Site.vue";
 import StandartSales from "@/components/sales/StandartSales.vue"
@@ -18,6 +22,7 @@ const routes = [
   },
   {
     path: "/home",
+    alias: "/app",
     component: Home,
     children: [
       { path: "vendas", component: Sales,
@@ -30,7 +35,8 @@ const routes = [
           {
             path: "leads/:id",
             component: Lead,
-            name: "lead-sales"
+            name: "lead-sales",
+            alias: ["/l/:id", "/pessoa/:id", "/:id"]
           },
           {
             path: "contratos",
@@ -44,8 +50,16 @@ const routes = [
 
         ]
       },
-      { path: "servicos", component: Services, name: "services" },
-      { path: "dashboard", component: Dashboard },
+      {
+        path: "servicos", component: Services, name: "services", children: [
+          {
+            path: ":id", alias: "/s/:id", name: "service", components: {
+              default: Service,
+              options: Options,
+              indicators: Indicators
+        }}
+      ] },
+      { path: "dashboard", components: { default: Dashboard, footer: DashboardFooter } },
     ]
   },
   {
