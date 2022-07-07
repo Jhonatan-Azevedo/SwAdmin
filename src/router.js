@@ -9,6 +9,7 @@ import Leads from "@/components/sales/Leads.vue"
 import Lead from "@/components/sales/Lead.vue"
 import Login from "@/views/Login.vue";
 import Options from "@/components/services/Options.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
 import Sales from "@/components/sales/Sales.vue"
 import Service from "@/components/services/Service.vue"
 import Services from "@/components/services/Services.vue"
@@ -80,7 +81,10 @@ const routes = [
       console.log(to);
 
       return { name: "sales"}
-  } },
+    }
+  },
+  
+  {path: "/:catchAll(.*)*", component: PageNotFound}
 ];
 
 const router = createRouter({
