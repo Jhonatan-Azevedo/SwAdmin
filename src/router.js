@@ -25,7 +25,8 @@ const routes = [
     alias: "/app",
     component: Home,
     children: [
-      { path: "vendas", component: Sales,
+      {
+        path: "vendas", component: Sales, 
         children: [
           {
             path: "leads",
@@ -45,7 +46,8 @@ const routes = [
           },
           {
             path: "",
-            component: StandartSales
+            component: StandartSales,
+            name: "sales"
           },
 
         ]
@@ -57,8 +59,10 @@ const routes = [
               default: Service,
               options: Options,
               indicators: Indicators
-        }}
-      ] },
+            }
+          }
+        ]
+      },
       { path: "dashboard", components: { default: Dashboard, footer: DashboardFooter } },
     ]
   },
@@ -66,6 +70,17 @@ const routes = [
     path: "/login",
     component: Login,
   },
+  { path: "/redirecionamento-1", redirect: "/home/servicos" },
+  { path: "/redirecionamento-2", redirect: {name: 'leads-sales'} },
+  { path: "/redirecionamento-3", redirect: "/home/vendas" },
+  { path: "/redirecionamento-4", redirect: {name: 'sales'} },
+  {
+    path: "/redirecionamento-5", redirect: to => {
+    //Definiar algo antes do direcionamento ser efetivado
+      console.log(to);
+
+      return { name: "sales"}
+  } },
 ];
 
 const router = createRouter({
