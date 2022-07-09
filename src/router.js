@@ -76,9 +76,8 @@ const routes = [
   { path: "/redirecionamento-3", redirect: "/home/vendas" },
   { path: "/redirecionamento-4", redirect: {name: 'sales'} },
   {
-    path: "/redirecionamento-5", redirect: to => {
+    path: "/redirecionamento-5", redirect: () => {
     //Definiar algo antes do direcionamento ser efetivado
-      console.log(to);
 
       return { name: "sales"}
     }

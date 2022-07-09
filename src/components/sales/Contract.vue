@@ -1,6 +1,41 @@
 <template>
   <section>
-    <h3>Contratos</h3>
+    <div class="card mb-4">
+      <div class="card-header">Contratos</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">ID Contrato:</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="searchForm.id_like"
+            />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Data início:</label>
+            <div class="input-group">
+              <input
+                type="date"
+                class="form-control"
+                v-model="searchForm.init_date_gte"
+              />
+              <input
+                type="date"
+                class="form-control"
+                v-model="searchForm.end_date_lte"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-orange" @click="searchContract()">
+          Pesquisar
+        </button>
+      </div>
+    </div>
+
     <table class="table table-hover">
       <thead>
         <tr>
@@ -30,11 +65,42 @@ import ApiMixin from "@/mixins/ApiMixin.js";
 export default {
   name: "Contracts",
 
+  data() {
+    return {
+      paramsURL: "_expand=lead&_expand=service",
+      searchForm: {
+        id_like: "",
+        init_date_gte: "",
+        end_date_lte: "",
+      },
+    };
+  },
+
   mixins: [ApiMixin],
   created() {
-    this.getDataApi(
-      "http://localhost:3000/contracts?_expand=lead&_expand=service"
-    );
+    const queryParams = new URLSearchParams(this.$route.query).toString();
+    const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
+    this.getDataApi(url);
+  },
+
+  beforeRouteUpdate(to, from, next) {
+    const queryParams = new URLSearchParams(to.query).toString();
+    const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
+    this.getDataApi(url);
+
+    next();
+  },
+
+  methods: {
+    searchContract() {
+      const queryParams = new URLSearchParams({
+        ...this.searchForm,
+      }).toString();
+
+      const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
+
+      this.getDataApi(url);
+    },
   },
 };
 </script>
