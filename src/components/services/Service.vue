@@ -1,11 +1,13 @@
 <template>
-  <section class="card">
-    <div class="card-header bg-orange text-white">
-      {{ data.service }}
-    </div>
+  <section>
+    <div class="card">
+      <div class="card-header bg-orange text-white">
+        {{ data.service }}
+      </div>
 
-    <div class="card-body">
-      <p class="card-text">{{ data.description }}</p>
+      <div class="card-body">
+        <p class="card-text">{{ data.description }}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -29,5 +31,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+section {
+  height: auto !important;
+}
 </style>

@@ -42,10 +42,10 @@
 import ApiMixin from "@/mixins/ApiMixin.js";
 export default {
   name: "Lead",
-
+  props: ["id"],
   mixins: [ApiMixin],
   created() {
-    this.getDataApi(`http://localhost:3000/leads/${this.$route.params.id}`);
+    this.getDataApi(`http://localhost:3000/leads/${this.id}`);
   },
 };
 </script>

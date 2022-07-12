@@ -36,6 +36,7 @@ const routes = [
           },
           {
             path: "leads/:id",
+            props: true,
             component: Lead,
             name: "lead-sales",
             alias: ["/l/:id", "/pessoa/:id", "/:id"]
@@ -56,10 +57,18 @@ const routes = [
       {
         path: "servicos", component: Services, name: "services", children: [
           {
-            path: ":id", alias: "/s/:id", name: "service", components: {
+            path: ":id",
+            props: {
+              default: true,
+              indicators: true,
+              options: true
+            },
+            alias: "/s/:id",
+            name: "service",
+            components: {
               default: Service,
               options: Options,
-              indicators: Indicators
+              indicators: Indicators,
             }
           }
         ]

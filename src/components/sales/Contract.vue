@@ -78,28 +78,21 @@ export default {
 
   mixins: [ApiMixin],
   created() {
-    const queryParams = new URLSearchParams(this.$route.query).toString();
-    const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
-    this.getDataApi(url);
+    const url = `http://localhost:3000/contracts?${this.paramsURL}`;
+    this.getDataApi(url, this.$route.query);
   },
 
-  beforeRouteUpdate(to, from, next) {
-    const queryParams = new URLSearchParams(to.query).toString();
-    const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
-    this.getDataApi(url);
+  beforeRouteUpdate(to, next) {
+    const url = `http://localhost:3000/contracts?${this.paramsURL}`;
+    this.getDataApi(url, to.query);
 
     next();
   },
 
   methods: {
     searchContract() {
-      const queryParams = new URLSearchParams({
-        ...this.searchForm,
-      }).toString();
-
-      const url = `http://localhost:3000/contracts?${this.paramsURL}&${queryParams}`;
-
-      this.getDataApi(url);
+      const url = `http://localhost:3000/contracts?${this.paramsURL}`;
+      this.getDataApi(url, this.searchForm);
     },
   },
 };
